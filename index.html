@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG World Map</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      a {
+        text-decoration: none;
+      }
+      #country-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+      }
+      path {
+        cursor: pointer;
+        fill: #ccc;
+        stroke: #000;
+        stroke-width: 0.5px;
+      }
+      .flag {
+        width: 300px;
+        height: 220px;
+        border: 1px solid #4c4b4b;
+      }
+      path:hover {
+        fill: #888;
+      }
+
+      /* Modal Styling */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .modal-content {
+        border-radius: 8px;
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 35px;
+        border: 1px solid #888;
+        width: 60%;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="country-name"></h2>
+        <p id="country-info"></p>
+      </div>
+    </div>
+
+    <!-- Xarita -->
+    <script src="./src/svg-world-map.js"></script>
+    <script>
+      svgWorldMap(); // Xarita yuklanadi
+    </script>
+    <script src="./src/js/modal.js"></script>
+  </body>
+</html>
